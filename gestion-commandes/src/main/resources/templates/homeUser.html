@@ -1,10 +1,110 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>User Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <h1>Bienvenue Utilisateur</h1>
-    <a th:href="@{/logout}">Logout</a>
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <h1>User<span>Panel</span></h1>
+      </div>
+      <div class="nav-menu">
+        <div class="menu-heading">Main</div>
+        <a href="/homeUser" class="nav-item active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+         <a href="/user/products" class="nav-item">
+		    <i class="fas fa-box"></i>
+		    <span>Products</span>
+		  </a>
+        <a href="/cart/view" class="nav-item">
+          <i class="fas fa-user"></i>
+          <span>My Cart</span>
+        </a>
+        <a href="/user/orders" class="nav-item">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Orders</span>
+        </a>
+        <div class="menu-heading">Settings</div>
+        <a href="/user/settings" class="nav-item">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <a href="/user/help" class="nav-item">
+          <i class="fas fa-question-circle"></i>
+          <span>Help</span>
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="header-actions">
+        <div class="notification">
+          <i class="fas fa-bell"></i>
+          <div class="badge">2</div>
+        </div>
+        <div class="notification">
+          <i class="fas fa-envelope"></i>
+          <div class="badge">1</div>
+        </div>
+        <div class="user-profile">
+          <div class="profile-img">IL</div>
+          <div class="user-info">
+            <div class="user-name">Ilham</div>
+            <div class="user-role">User</div>
+          </div>
+        </div>
+        <a href="/logout" class="logout-button">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content p-4">
+      <h2>Bienvenue, Ilham ! 👋</h2>
+      <p>Voici un aperçu de vos activités récentes :</p>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h5><i class="fas fa-box me-2"></i> Commandes</h5>
+            <p>Vous avez <strong>3</strong> commandes en cours.</p>
+            <a href="/user/orders" class="btn btn-primary btn-sm">Voir mes commandes</a>
+     
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h5><i class="fas fa-question-circle me-2"></i> Assistance</h5>
+            <p>Des questions ? Contactez le support.</p>
+            <a href="/user/help" class="btn btn-primary btn-sm">Contacter</a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-5" />
+    </div>
+    
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
